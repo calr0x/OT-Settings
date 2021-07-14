@@ -73,7 +73,7 @@ __Getting your Telegram bot token__
 
 1. Add @botfather on Telegram
 2. Follow the on-screen instructions to create your chat bot
-3. Paste the code into \
+3. Paste the code into
 
 ```
 export TELEGRAM_TOKEN="REPLACE_WITH_TELEGRAM_TOKEN"
@@ -84,7 +84,7 @@ __Getting your chat ID__
 1. Add @IDBot 
 2. Type /start
 3. Type /getid
-4. Paste the code into \
+4. Paste the code into
 
 ```
 export CHAT_ID="REPLACE_WITH_TELEGRAM_CHAT_ID"
