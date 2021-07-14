@@ -44,9 +44,13 @@ __Getting your S3 Bucket URL__
 5. Your URL is as follows : \
 s3:https://s3.amazonaws.com/YOU_BUCKET_NAME
 6. Paste this link into config.sh  \
+```
 export RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/YOU_BUCKET_NAME"
+```
 7. Select your desired password and put it in 
+```
 export RESTIC_PASSWORD="REPLACE_WITH_RESTIC_REPOSITORY_PASSWORD"
+```
 
 __Getting your AWS Access Key ID and Secret Access Key__
 
@@ -57,8 +61,10 @@ __Getting your AWS Access Key ID and Secret Access Key__
 5. Create New Access Key
 6. Both keys will be shown, make sure to keep them safely
 7. Paste keys to 
+```
 export AWS_ACCESS_KEY_ID="REPLACE_WITH_AWS_ACCESS_KEY"
 export AWS_SECRET_ACCESS_KEY="REPLACE_WITH_AWS_SECRET_ACCESS_KEY"
+```
 
 ## Telegram notifications
 ---
