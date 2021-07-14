@@ -14,14 +14,14 @@ git clone https://github.com/calr0x/OT-Settings.git
 cd OT-Settings
 ```
 ```
-cp config-original.sh config.sh
+cp config-example.sh config.sh
 ```
 ```
 nano config.sh
 ```
-Essentially, what we are doing here is make a local copy of the config-original.sh file and name it config.sh. 
+Essentially, what we are doing here is make a local copy of the config-example.sh file and name it config.sh. 
 
-You do not want to change config-original.sh since this will be modified every time you want to git pull (aka update) your repository. 
+You do not want to change config-example.sh since this will be modified every time you want to git pull (aka update) your repository. 
 
 Every change made will be done on config.sh, and every other OT repository will be sourcing from config.sh.
 
