@@ -46,3 +46,7 @@ export CHAT_ID="REPLACE_WITH_TELEGRAM_CHAT_ID"
 
 BID_CHECK_INTERVAL="1 hour ago"
 BID_CHECK_JOB_NOTIFY_ENABLED="true"
+
+# SPACE_THRESHOLD:                  Set this to what percentage it should alert above (default 90%).
+
+DISK_CHECK_THRESHOLD="90"
