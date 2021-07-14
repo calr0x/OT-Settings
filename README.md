@@ -27,15 +27,11 @@ Every change made will be done on config.sh, and every other OT repository will 
 
 Follow the commented out instructions in the config.sh file and fill up the variables. If you need help, consult the guide below.
 
-## __VARIABLES__
----
+## __VARIABLES:__
 This section will cover how to get each variable to put inside config.sh
 
-
-
-## Amazon AWS
----
-__Getting your S3 Bucket URL__
+## Amazon AWS:
+__Getting your S3 Bucket URL:__
 
 1. Log in to your Amazon AWS account
 2. Go to Buckets
@@ -48,7 +44,7 @@ export RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/YOU_BUCKET_NAME"
 7. Select your desired password and put it in 
 export RESTIC_PASSWORD="REPLACE_WITH_RESTIC_REPOSITORY_PASSWORD"
 
-__Getting your AWS Access Key ID and Secret Access Key__
+__Getting your AWS Access Key ID and Secret Access Key:__
 
 1. Log in to your Amazon AWS account
 2. Click on your username on the top right corner
@@ -60,16 +56,15 @@ __Getting your AWS Access Key ID and Secret Access Key__
 export AWS_ACCESS_KEY_ID="REPLACE_WITH_AWS_ACCESS_KEY"
 export AWS_SECRET_ACCESS_KEY="REPLACE_WITH_AWS_SECRET_ACCESS_KEY"
 
-## Telegram notifications
----
-__Getting your Telegram bot token__
+## Telegram notifications:
+__Getting your Telegram bot token:__
 
 1. Add @botfather on Telegram
 2. Follow the on-screen instructions to create your chat bot
 3. Paste the code into \
 export TELEGRAM_TOKEN="REPLACE_WITH_TELEGRAM_TOKEN"
 
-__Getting your chat ID__
+__Getting your chat ID:__
 
 1. Add @IDBot 
 2. Type /start
