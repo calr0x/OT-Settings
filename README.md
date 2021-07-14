@@ -14,28 +14,24 @@ git clone https://github.com/calr0x/OT-Settings.git
 cd OT-Settings
 ```
 ```
-cp config-original.sh config.sh
+cp config-example.sh config.sh
 ```
 ```
 nano config.sh
 ```
-Essentially, what we are doing here is make a local copy of the config-original.sh file and name it config.sh. 
+Essentially, what we are doing here is make a local copy of the config-example.sh file and name it config.sh. 
 
-You do not want to change config-original.sh since this will be modified every time you want to git pull (aka update) your repository. 
+You do not want to change config-example.sh since this will be modified every time you want to git pull (aka update) your repository. 
 
 Every change made will be done on config.sh, and every other OT repository will be sourcing from config.sh.
 
 Follow the commented out instructions in the config.sh file and fill up the variables. If you need help, consult the guide below.
 
-## __VARIABLES__
----
+## __VARIABLES:__
 This section will cover how to get each variable to put inside config.sh
 
-
-
-## Amazon AWS
----
-__Getting your S3 Bucket URL__
+## Amazon AWS:
+__Getting your S3 Bucket URL:__
 
 1. Log in to your Amazon AWS account
 2. Go to Buckets
@@ -52,7 +48,7 @@ export RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/YOU_BUCKET_NAME"
 export RESTIC_PASSWORD="REPLACE_WITH_RESTIC_REPOSITORY_PASSWORD"
 ```
 
-__Getting your AWS Access Key ID and Secret Access Key__
+__Getting your AWS Access Key ID and Secret Access Key:__
 
 1. Log in to your Amazon AWS account
 2. Click on your username on the top right corner
@@ -67,9 +63,8 @@ export AWS_ACCESS_KEY_ID="REPLACE_WITH_AWS_ACCESS_KEY"
 export AWS_SECRET_ACCESS_KEY="REPLACE_WITH_AWS_SECRET_ACCESS_KEY"
 ```
 
-## Telegram notifications
----
-__Getting your Telegram bot token__
+## Telegram notifications:
+__Getting your Telegram bot token:__
 
 1. Add @botfather on Telegram
 2. Follow the on-screen instructions to create your chat bot
@@ -79,7 +74,7 @@ __Getting your Telegram bot token__
 export TELEGRAM_TOKEN="REPLACE_WITH_TELEGRAM_TOKEN"
 ```
 
-__Getting your chat ID__
+__Getting your chat ID:__
 
 1. Add @IDBot 
 2. Type /start
