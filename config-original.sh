@@ -26,8 +26,27 @@ export B2_ACCOUNT_KEY="REPLACE_WITH_B2_ACCOUNT_KEY"
 #                                                 #
 # OT-SMOOTHBRAIN-BACKUP                           #
 # OT-NODEWATCH                                    #
-
 ###################################################
 
 export TELEGRAM_TOKEN="REPLACE_WITH_TELEGRAM_TOKEN"
 export CHAT_ID="REPLACE_WITH_TELEGRAM_CHAT_ID"
+
+
+###################################################
+# THIS SECTION IS USED BY THE FOLLOWING PROJECTS: #
+#                                                 #
+# OT-NODEWATCH                                    #
+###################################################
+
+# BID_CHECK_JOB_NOTIFY_ENABLED:     Set to false to disable bid notifications (default true)
+# BID_CHECK_INTERVAL:               Set this to how far back to search the log for mentions of "Accepting" (default 1 hour).
+
+# This value should match the CRON schedule. For example, Every 1 hour
+# CRON should run this script which checks the logs for the past 1 hour.
+
+BID_CHECK_INTERVAL="1 hour ago"
+BID_CHECK_JOB_NOTIFY_ENABLED="true"
+
+# SPACE_THRESHOLD:                  Set this to what percentage it should alert above (default 90%).
+
+DISK_CHECK_THRESHOLD="90"
