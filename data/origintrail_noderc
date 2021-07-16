@@ -1,0 +1,23 @@
+{
+   "blockchain": {
+     "implementations": [
+       {
+         "blockchain_title": "xDai",
+         "network_id": "xdai:mainnet",
+         "identity_filepath": "xdai_erc725_identity.json",
+         "dh_price_factor" : "DH_PRICE_FACTOR",
+         "gas_price": "GAS_PRICE",
+         "node_wallet": "PUBLIC_KEY_OF_YOUR_WALLET",
+         "node_private_key": "PRIVATE_KEY_OF_YOUR_WALLET",
+         "management_wallet": "PUBLIC_KEY_OF_MANAGEMENT_WALLET"
+       }
+     ]
+   },
+   "network": {
+     "hostname": "HOSTNAME",
+     "remoteWhitelist": "127.0.0.1"
+     },
+   "initial_deposit_amount": "INITIAL_DEPOSIT_AMOUNT_HERE",
+   "dh_max_holding_time_in_minutes": "DH_HOLDING_TIME_MINUTES",
+   "disable_auto_payouts" : "true"
+}
