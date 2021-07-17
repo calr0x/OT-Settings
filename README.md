@@ -37,9 +37,9 @@ __Getting your S3 Bucket URL:__
 2. Go to Buckets
 3. Create bucket
 4. Choose the name of your bucket and leave the rest as default
-5. Your URL is as follows : \
+5. Your URL is as follows :
 s3:https://s3.amazonaws.com/YOU_BUCKET_NAME
-6. Paste this link into config.sh  \
+6. Paste this link into config.sh
 ```
 export RESTIC_REPOSITORY="s3:https://s3.amazonaws.com/YOU_BUCKET_NAME"
 ```
