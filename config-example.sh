@@ -51,22 +51,3 @@ BID_CHECK_JOB_NOTIFY_ENABLED="true"
 # SPACE_THRESHOLD:                  Set this to what percentage it should alert above (default 90%).
 
 DISK_CHECK_THRESHOLD="90"
-
-###################################################
-# THIS SECTION IS USED BY MULTINODE PROJECTS:     #
-#                                                 #
-#                                                 #
-###################################################
-
-# Add as many as you have nodes on the same server
-
-NODE1="otnode1"
-NODE2="otnode2"
-NODE3="otnode3"
-NODE4="otnode4"
-NODE5="otnode5"
-NODE6="otnode6"
-NODE7="otnode7"
-NODE8="otnode8"
-NODE9="otnode9"
-NODE10="otnode10"
