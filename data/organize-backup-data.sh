@@ -17,7 +17,7 @@ OTNODERC_COUNT=$(echo "$OTNODERC" | wc -l)
 case "$OTNODERC_COUNT" in
    0)
         echo "No files named $OTNODE_FILENAME were found on this server."
-        $ERROR_CODE=1
+        let ERROR_CODE=1
         ;;
    1)
         if [[ $OTNODERC == $BACKUP ]]; then
