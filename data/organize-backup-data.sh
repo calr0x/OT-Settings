@@ -190,7 +190,7 @@ case "$ARANGODB_COUNT" in
             echo "$ARANGODB_FILENAME found in $BACKUP."
         else
             echo "Copying $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
-            cp $ARANGODB/$ARANGODB_FILENAME /root/backup
+            cp $ARANGODB /root/backup
         fi
         ;;
    [2-99])
@@ -214,7 +214,7 @@ case "$MIGRATIONS_COUNT" in
             echo "$MIGRATIONS_FILENAME found in $BACKUP."
         else
             echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
-            cp $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
+            cp $MIGRATIONS /root/backup
         fi
         ;;
    [2-99])
