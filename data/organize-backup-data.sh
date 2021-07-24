@@ -3,7 +3,7 @@
 N1=$'\n'
 BACKUP=/root/backup
 
-if [ ! -d "/root/backup" ]; then
+if [[ ! -d "/root/backup" ]]; then
     mkdir /root/backup
 fi
 
@@ -18,7 +18,7 @@ case "$OTNODERC_COUNT" in
         echo "No files named $OTNODE_FILENAME were found on this server."
         ;;
    1)
-        if [ $OTNODERC == $BACKUP ]; then
+        if [[ $OTNODERC == $BACKUP ]]; then
             echo "$OTNODE_FILENAME found in $BACKUP."
         else
             echo "Copying $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
@@ -42,7 +42,7 @@ case "$HOUSTON_COUNT" in
         echo "No files named $HOUSTON_FILENAME were found on this server."
         ;;
    1)
-        if [ $HOUSTON == $BACKUP ]; then
+        if [[ $HOUSTON == $BACKUP ]]; then
             echo "$HOUSTON_FILENAME found in $BACKUP."
         else
             echo "Copying $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
@@ -66,7 +66,7 @@ case "$IDENTITY_COUNT" in
         echo "No files named $IDENTITY_FILENAME were found on this server."
         ;;
    1)
-        if [ $IDENTITY == $BACKUP ]; then
+        if [[ $IDENTITY == $BACKUP ]]; then
             echo "$IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
@@ -90,7 +90,7 @@ case "$KADEMLIA_COUNT" in
         echo "No files named $KADEMLIA_FILENAME were found on this server."
         ;;
    1)
-        if [ $KADEMLIA == $BACKUP ]; then
+        if [[ $KADEMLIA == $BACKUP ]]; then
             echo "$KADEMLIA_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
@@ -114,7 +114,7 @@ case "$KADEMLIA_KEY_COUNT" in
         echo "No files named $KADEMLIA_KEY_FILENAME were found on this server."
         ;;
    1)
-        if [ $KADEMLIA_KEY == $BACKUP ]; then
+        if [[ $KADEMLIA_KEY == $BACKUP ]]; then
             echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
@@ -138,7 +138,7 @@ case "$SYSTEMDB_COUNT" in
         echo "No files named $SYSTEMDB_FILENAME were found on this server."
         ;;
    1)
-        if [ $SYSTEMDB == $BACKUP ]; then
+        if [[ $SYSTEMDB == $BACKUP ]]; then
             echo "$SYSTEMDB_FILENAME found in $BACKUP."
         else
             echo "Copying $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
@@ -162,7 +162,7 @@ case "$XDAI_IDENTITY_COUNT" in
         echo "No files named $XDAI_IDENTITY_FILENAME were found on this server."
         ;;
    1)
-        if [ $XDAI_IDENTITY == $BACKUP ]; then
+        if [[ $XDAI_IDENTITY == $BACKUP ]]; then
             echo "$XDAI_IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
@@ -186,7 +186,7 @@ case "$ARANGODB_COUNT" in
         echo "No files named $ARANGODB_FILENAME were found on this server."
         ;;
    1)
-        if [ $ARANGODB == $BACKUP ]; then
+        if [[ $ARANGODB == $BACKUP ]]; then
             echo "$ARANGODB_FILENAME found in $BACKUP."
         else
             echo "Copying $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
@@ -210,7 +210,7 @@ case "$MIGRATIONS_COUNT" in
         echo "No files named $MIGRATIONS_FILENAME were found on this server."
         ;;
    1)
-        if [ $MIGRATIONS == $BACKUP ]; then
+        if [[ $MIGRATIONS == $BACKUP ]]; then
             echo "$MIGRATIONS_FILENAME found in $BACKUP."
         else
             echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
