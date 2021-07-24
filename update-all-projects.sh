@@ -8,7 +8,7 @@ echo "*************************************************"
 echo "${N1}"
 
 if [ -d "/root/OT-Ansible-Files-and-Playbooks" ]; then
-    echo "${N1}UPDATING: OT-Ansible-Files-and-Playbooks"
+    echo "UPDATING: OT-Ansible-Files-and-Playbooks"
     (cd /root/OT-Ansible-Files-and-Playbooks && git pull) 2>/dev/null && echo "${N1}"
 else
     echo "${N1}OT-Ansible-Files-and-Playbooks not found, skipping${N1}${N1}"
