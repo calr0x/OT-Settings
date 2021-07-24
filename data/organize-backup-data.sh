@@ -224,12 +224,12 @@ MIGRATIONS_COUNT=$(echo "$MIGRATIONS" | wc -l)
 
 case "$MIGRATIONS_COUNT" in
    0)
-        echo "No files named $MIGRATIONS_FILENAME were found on this server."
+        echo "No files named $MIGRATIONS_FILENAME were found on this server.${N1}"
         let ERROR_CODE=1
         ;;
    1)
         if [[ $MIGRATIONS == $BACKUP ]]; then
-            echo "$MIGRATIONS_FILENAME found in $BACKUP."
+            echo "$MIGRATIONS_FILENAME found in $BACKUP.${N1}"
         else
             echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP${N1}"
             mv  $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
