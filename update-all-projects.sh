@@ -1,6 +1,10 @@
 #!/bin/bash
 N1=$'\n'
 
+echo "*************************************************"
+echo "***               UPDATING                    ***"
+echo "*************************************************"
+
 if [ -d "/root/OT-Ansible-Files-and-Playbooks" ]; then
     echo "${N1}UPDATING: OT-Ansible-Files-and-Playbooks"
     (cd /root/OT-Ansible-Files-and-Playbooks && git pull) 2>/dev/null && echo "${N1}"
