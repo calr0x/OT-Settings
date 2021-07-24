@@ -178,7 +178,7 @@ esac
 # Find arangodb
 
 ARANGODB_FILENAME=arangodb
-ARANGODB=$(find /root -name $ARANGODB_FILENAME -type d -path ~/.origintrail_noderc -prune -o -path ~/.origintrail_noderc -prune -o-printf '%h\n')
+ARANGODB=$(find /root -name $ARANGODB_FILENAME -type d -path ~/.origintrail_noderc -prune -o -printf '%h\n')
 ARANGODB_COUNT=$(echo "$ARANGODB" | wc -l)
 
 case "$ARANGODB_COUNT" in
