@@ -58,7 +58,7 @@ esac
 # Find identity.json
 
 IDENTITY_FILENAME=identity.json
-IDENTITY=$(find /root -name $IDENTITY_FILENAME -type f -type f -not -path ~/.origintrail_noderc)
+IDENTITY=$(find /root -name $IDENTITY_FILENAME -type f -not -path ~/.origintrail_noderc)
 IDENTITY_COUNT=$(echo "$IDENTITY" | wc -l)
 
 case "$IDENTITY_COUNT" in
@@ -82,7 +82,7 @@ esac
 # Find KADEMLIA.crt
 
 KADEMLIA_FILENAME=kademlia.crt
-KADEMLIA=$(find /root -name $KADEMLIA_FILENAME -type f -type f -not -path ~/.origintrail_noderc)
+KADEMLIA=$(find /root -name $KADEMLIA_FILENAME -type f -not -path ~/.origintrail_noderc)
 KADEMLIA_COUNT=$(echo "$KADEMLIA" | wc -l)
 
 case "$KADEMLIA_COUNT" in
@@ -130,7 +130,7 @@ esac
 # Find system.db
 
 SYSTEMDB_FILENAME=system.db
-SYSTEMDB=$(find /root -name $SYSTEMDB_FILENAME -type f -type f -not -path ~/.origintrail_noderc)
+SYSTEMDB=$(find /root -name $SYSTEMDB_FILENAME -type f -not -path ~/.origintrail_noderc)
 SYSTEMDB_COUNT=$(echo "$SYSTEMDB" | wc -l)
 
 case "$SYSTEMDB_COUNT" in
@@ -154,7 +154,7 @@ esac
 # Find xdai_erc725_identity.json
 
 XDAI_IDENTITY_FILENAME=xdai_erc725_identity.json
-XDAI_IDENTITY=$(find /root -name $XDAI_IDENTITY_FILENAME -type f -type f -not -path ~/.origintrail_noderc)
+XDAI_IDENTITY=$(find /root -name $XDAI_IDENTITY_FILENAME -type f -not -path ~/.origintrail_noderc)
 XDAI_IDENTITY_COUNT=$(echo "$XDAI_IDENTITY" | wc -l)
 
 case "$XDAI_IDENTITY_COUNT" in
@@ -178,7 +178,7 @@ esac
 # Find arangodb
 
 ARANGODB_FILENAME=arangodb
-ARANGODB=$(find /root -name $ARANGODB_FILENAME -type d -type f -not -path ~/.origintrail_noderc)
+ARANGODB=$(find /root -name $ARANGODB_FILENAME -type d -not -path ~/.origintrail_noderc)
 ARANGODB_COUNT=$(echo "$ARANGODB" | wc -l)
 
 case "$ARANGODB_COUNT" in
@@ -202,7 +202,7 @@ esac
 # Find migrations
 
 MIGRATIONS_FILENAME=migrations
-MIGRATIONS=$(find /root -name $MIGRATIONS_FILENAME -type d -type f -not -path ~/.origintrail_noderc)
+MIGRATIONS=$(find /root -name $MIGRATIONS_FILENAME -type d -not -path ~/.origintrail_noderc)
 MIGRATIONS_COUNT=$(echo "$MIGRATIONS" | wc -l)
 
 case "$MIGRATIONS_COUNT" in
