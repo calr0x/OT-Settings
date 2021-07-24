@@ -22,7 +22,7 @@ case "$OTNODERC_COUNT" in
             echo "$OTNODE_FILENAME found in $BACKUP."
         else
             echo "Copying $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
-            cp $OTNODERC/$OTNODE_FILENAME /root/backup
+            cp $OTNODERC /root/backup
         fi
         ;;
    [2-99])
@@ -46,7 +46,7 @@ case "$HOUSTON_COUNT" in
             echo "$HOUSTON_FILENAME found in $BACKUP."
         else
             echo "Copying $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
-            cp $HOUSTON/$HOUSTON_FILENAME /root/backup
+            cp $HOUSTON /root/backup
         fi
         ;;
    [2-99])
@@ -70,7 +70,7 @@ case "$IDENTITY_COUNT" in
             echo "$IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
-            cp $IDENTITY/$IDENTITY_FILENAME /root/backup
+            cp $IDENTITY /root/backup
         fi
         ;;
    [2-99])
@@ -94,7 +94,7 @@ case "$KADEMLIA_COUNT" in
             echo "$KADEMLIA_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
-            cp $KADEMLIA/$KADEMLIA_FILENAME /root/backup
+            cp $KADEMLIA /root/backup
         fi
         ;;
    [2-99])
@@ -118,7 +118,7 @@ case "$KADEMLIA_KEY_COUNT" in
             echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
-            cp $KADEMLIA_KEY/$KADEMLIA_KEY_FILENAME /root/backup
+            cp $KADEMLIA_KEY /root/backup
         fi
         ;;
    [2-99])
@@ -142,7 +142,7 @@ case "$SYSTEMDB_COUNT" in
             echo "$SYSTEMDB_FILENAME found in $BACKUP."
         else
             echo "Copying $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
-            cp $SYSTEMDB/$SYSTEMDB_FILENAME /root/backup
+            cp $SYSTEMDB /root/backup
         fi
         ;;
    [2-99])
@@ -166,7 +166,7 @@ case "$XDAI_IDENTITY_COUNT" in
             echo "$XDAI_IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
-            cp $XDAI_IDENTITY/$XDAI_IDENTITY_FILENAME /root/backup
+            cp $XDAI_IDENTITY /root/backup
         fi
         ;;
    [2-99])
