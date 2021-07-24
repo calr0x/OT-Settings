@@ -31,7 +31,7 @@ fi
 
 if [ -d "/root/OT-DockSucker" ]; then
     echo "UPDATING: OT-DockSucker"
-    (cd /root/OT-DockSucker && git pull) 2>/dev/null && echo "${N1}${N1}"
+    (cd /root/OT-DockSucker && git pull) 2>/dev/null && echo "${N1}"
 else
     echo "OT-DockSucker not found, skipping${N1}${N1}"
 fi
