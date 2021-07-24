@@ -244,8 +244,8 @@ esac
 
 if [[ $ERROR_CODE -eq 1 ]]; then
      echo "There are either missing files or duplicates. Missing files can be placed ANYWHERE in /root to be detected. Please \
-     delete the older duplicate files (use the locations printed above to find) and rerun this script. Keep the most recent \
-     file and delete the others."
+delete the older duplicate files (use the locations printed above to find) and rerun this script. Keep the most recent \
+file and delete the others."
      exit 1
 else
      echo "Backup files successfully found!"
