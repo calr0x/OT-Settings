@@ -7,10 +7,10 @@ if [[ ! -d "/root/backup" ]]; then
     mkdir /root/backup
 fi
 
-# Find .origintral_noderc
+# find .origintrail_noderc
 
 OTNODE_FILENAME=.origintrail_noderc
-OTNODERC=$(find /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+OTNODERC=$(find -L /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 OTNODERC_COUNT=$(echo "$OTNODERC" | wc -l)
 
 case "$OTNODERC_COUNT" in
@@ -31,10 +31,10 @@ case "$OTNODERC_COUNT" in
         ;;
 esac
 
-# Find houston.txt
+# find houston.txt
 
 HOUSTON_FILENAME=houston.txt
-HOUSTON=$(find /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+HOUSTON=$(find -L /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 HOUSTON_COUNT=$(echo "$HOUSTON" | wc -l)
 
 case "$HOUSTON_COUNT" in
@@ -55,10 +55,10 @@ case "$HOUSTON_COUNT" in
         ;;
 esac
 
-# Find identity.json
+# find identity.json
 
 IDENTITY_FILENAME=identity.json
-IDENTITY=$(find /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+IDENTITY=$(find -L /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 IDENTITY_COUNT=$(echo "$IDENTITY" | wc -l)
 
 case "$IDENTITY_COUNT" in
@@ -79,10 +79,10 @@ case "$IDENTITY_COUNT" in
         ;;
 esac
 
-# Find KADEMLIA.crt
+# find KADEMLIA.crt
 
 KADEMLIA_FILENAME=kademlia.crt
-KADEMLIA=$(find /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+KADEMLIA=$(find -L /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 KADEMLIA_COUNT=$(echo "$KADEMLIA" | wc -l)
 
 case "$KADEMLIA_COUNT" in
@@ -103,10 +103,10 @@ case "$KADEMLIA_COUNT" in
         ;;
 esac
 
-# Find kademlia.key
+# find kademlia.key
 
 KADEMLIA_KEY_FILENAME=kademlia.key
-KADEMLIA_KEY=$(find /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+KADEMLIA_KEY=$(find -L /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 KADEMLIA_KEY_COUNT=$(echo "$KADEMLIA_KEY" | wc -l)
 
 case "$KADEMLIA_KEY_COUNT" in
@@ -127,10 +127,10 @@ case "$KADEMLIA_KEY_COUNT" in
         ;;
 esac
 
-# Find system.db
+# find system.db
 
 SYSTEMDB_FILENAME=system.db
-SYSTEMDB=$(find /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+SYSTEMDB=$(find -L /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 SYSTEMDB_COUNT=$(echo "$SYSTEMDB" | wc -l)
 
 case "$SYSTEMDB_COUNT" in
@@ -151,10 +151,10 @@ case "$SYSTEMDB_COUNT" in
         ;;
 esac
 
-# Find xdai_erc725_identity.json
+# find xdai_erc725_identity.json
 
 XDAI_IDENTITY_FILENAME=xdai_erc725_identity.json
-XDAI_IDENTITY=$(find /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+XDAI_IDENTITY=$(find -L /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 XDAI_IDENTITY_COUNT=$(echo "$XDAI_IDENTITY" | wc -l)
 
 case "$XDAI_IDENTITY_COUNT" in
@@ -175,10 +175,10 @@ case "$XDAI_IDENTITY_COUNT" in
         ;;
 esac
 
-# Find arangodb
+# find arangodb
 
 ARANGODB_FILENAME=arangodb
-ARANGODB=$(find /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*")
+ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*")
 ARANGODB_COUNT=$(echo "$ARANGODB" | wc -l)
 
 case "$ARANGODB_COUNT" in
@@ -199,10 +199,10 @@ case "$ARANGODB_COUNT" in
         ;;
 esac
 
-# Find migrations
+# find migrations
 
 MIGRATIONS_FILENAME=migrations
-MIGRATIONS=$(find /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*")
+MIGRATIONS=$(find -L /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*")
 MIGRATIONS_COUNT=$(echo "$MIGRATIONS" | wc -l)
 
 case "$MIGRATIONS_COUNT" in
