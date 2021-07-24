@@ -1,9 +1,11 @@
 #!/bin/bash
 N1=$'\n'
 
+echo "${N1}"
 echo "*************************************************"
 echo "***               UPDATING                    ***"
 echo "*************************************************"
+echo "${N1}"
 
 if [ -d "/root/OT-Ansible-Files-and-Playbooks" ]; then
     echo "${N1}UPDATING: OT-Ansible-Files-and-Playbooks"
