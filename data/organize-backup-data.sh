@@ -231,7 +231,7 @@ case "$MIGRATIONS_COUNT" in
         if [[ $MIGRATIONS == $BACKUP ]]; then
             echo "$MIGRATIONS_FILENAME found in $BACKUP."
         else
-            echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
+            echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP${N1}"
             mv  $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
         fi
         ;;
