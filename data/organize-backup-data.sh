@@ -106,7 +106,7 @@ esac
 # Find kademlia.key
 
 KADEMLIA_KEY_FILENAME=kademlia.key
-KADEMLIA_KEY=$(find /root -name $KADEMLIA_KEY_FILENAME -type f -path ! -path "/root/.origintrail_noderc/*")
+KADEMLIA_KEY=$(find /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
 KADEMLIA_KEY_COUNT=$(echo "$KADEMLIA_KEY" | wc -l)
 
 case "$KADEMLIA_KEY_COUNT" in
