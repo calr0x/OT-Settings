@@ -22,7 +22,7 @@ case "$OTNODERC_COUNT" in
             echo "$OTNODE_FILENAME found in $BACKUP."
         else
             echo "Copying $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
-            cp $OTNODERC /root/backup
+            mv $OTNODERC /root/backup
         fi
         ;;
    [2-99])
@@ -46,7 +46,7 @@ case "$HOUSTON_COUNT" in
             echo "$HOUSTON_FILENAME found in $BACKUP."
         else
             echo "Copying $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
-            cp $HOUSTON /root/backup
+            mv $HOUSTON /root/backup
         fi
         ;;
    [2-99])
@@ -70,7 +70,7 @@ case "$IDENTITY_COUNT" in
             echo "$IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
-            cp $IDENTITY /root/backup
+            mv $IDENTITY /root/backup
         fi
         ;;
    [2-99])
@@ -94,7 +94,7 @@ case "$KADEMLIA_COUNT" in
             echo "$KADEMLIA_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
-            cp $KADEMLIA /root/backup
+            mv $KADEMLIA /root/backup
         fi
         ;;
    [2-99])
@@ -118,7 +118,7 @@ case "$KADEMLIA_KEY_COUNT" in
             echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
-            cp $KADEMLIA_KEY /root/backup
+            mv $KADEMLIA_KEY /root/backup
         fi
         ;;
    [2-99])
@@ -142,7 +142,7 @@ case "$SYSTEMDB_COUNT" in
             echo "$SYSTEMDB_FILENAME found in $BACKUP."
         else
             echo "Copying $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
-            cp $SYSTEMDB /root/backup
+            mv $SYSTEMDB /root/backup
         fi
         ;;
    [2-99])
@@ -166,7 +166,7 @@ case "$XDAI_IDENTITY_COUNT" in
             echo "$XDAI_IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
-            cp $XDAI_IDENTITY /root/backup
+            mv $XDAI_IDENTITY /root/backup
         fi
         ;;
    [2-99])
@@ -190,7 +190,7 @@ case "$ARANGODB_COUNT" in
             echo "$ARANGODB_FILENAME found in $BACKUP."
         else
             echo "Copying $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
-            cp -r $ARANGODB /root/backup
+            mv -r $ARANGODB /root/backup
         fi
         ;;
    [2-99])
@@ -214,7 +214,7 @@ case "$MIGRATIONS_COUNT" in
             echo "$MIGRATIONS_FILENAME found in $BACKUP."
         else
             echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
-            cp -r $MIGRATIONS /root/backup
+            mv -r $MIGRATIONS /root/backup
         fi
         ;;
    [2-99])
