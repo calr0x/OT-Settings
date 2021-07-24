@@ -10,7 +10,7 @@ fi
 # find .origintrail_noderc
 
 OTNODE_FILENAME=.origintrail_noderc
-OTNODERC=$(find -L /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+OTNODERC=$(find -L /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 OTNODERC_COUNT=$(echo "$OTNODERC" | wc -l)
 
 case "$OTNODERC_COUNT" in
@@ -34,7 +34,7 @@ esac
 # find houston.txt
 
 HOUSTON_FILENAME=houston.txt
-HOUSTON=$(find -L /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+HOUSTON=$(find -L /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 HOUSTON_COUNT=$(echo "$HOUSTON" | wc -l)
 
 case "$HOUSTON_COUNT" in
@@ -46,7 +46,7 @@ case "$HOUSTON_COUNT" in
             echo "$HOUSTON_FILENAME found in $BACKUP."
         else
             echo "Copying $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
-            mv $HOUSTON /root/backup
+            mv $HOUSTON/$HOUSTON_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -58,7 +58,7 @@ esac
 # find identity.json
 
 IDENTITY_FILENAME=identity.json
-IDENTITY=$(find -L /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+IDENTITY=$(find -L /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 IDENTITY_COUNT=$(echo "$IDENTITY" | wc -l)
 
 case "$IDENTITY_COUNT" in
@@ -70,7 +70,7 @@ case "$IDENTITY_COUNT" in
             echo "$IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
-            mv $IDENTITY /root/backup
+            mv $IDENTITY/$IDENTITY_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -82,7 +82,7 @@ esac
 # find KADEMLIA.crt
 
 KADEMLIA_FILENAME=kademlia.crt
-KADEMLIA=$(find -L /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+KADEMLIA=$(find -L /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 KADEMLIA_COUNT=$(echo "$KADEMLIA" | wc -l)
 
 case "$KADEMLIA_COUNT" in
@@ -94,7 +94,7 @@ case "$KADEMLIA_COUNT" in
             echo "$KADEMLIA_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
-            mv $KADEMLIA /root/backup
+            mv $KADEMLIA/$KADEMLIA_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -106,7 +106,7 @@ esac
 # find kademlia.key
 
 KADEMLIA_KEY_FILENAME=kademlia.key
-KADEMLIA_KEY=$(find -L /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+KADEMLIA_KEY=$(find -L /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 KADEMLIA_KEY_COUNT=$(echo "$KADEMLIA_KEY" | wc -l)
 
 case "$KADEMLIA_KEY_COUNT" in
@@ -118,7 +118,7 @@ case "$KADEMLIA_KEY_COUNT" in
             echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
         else
             echo "Copying $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
-            mv $KADEMLIA_KEY /root/backup
+            mv $KADEMLIA_KEY/$KADEMLIA_KEY_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -130,7 +130,7 @@ esac
 # find system.db
 
 SYSTEMDB_FILENAME=system.db
-SYSTEMDB=$(find -L /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+SYSTEMDB=$(find -L /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 SYSTEMDB_COUNT=$(echo "$SYSTEMDB" | wc -l)
 
 case "$SYSTEMDB_COUNT" in
@@ -142,7 +142,7 @@ case "$SYSTEMDB_COUNT" in
             echo "$SYSTEMDB_FILENAME found in $BACKUP."
         else
             echo "Copying $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
-            mv $SYSTEMDB /root/backup
+            mv $SYSTEMDB/$SYSTEMDB_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -154,7 +154,7 @@ esac
 # find xdai_erc725_identity.json
 
 XDAI_IDENTITY_FILENAME=xdai_erc725_identity.json
-XDAI_IDENTITY=$(find -L /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*")
+XDAI_IDENTITY=$(find -L /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 XDAI_IDENTITY_COUNT=$(echo "$XDAI_IDENTITY" | wc -l)
 
 case "$XDAI_IDENTITY_COUNT" in
@@ -166,7 +166,7 @@ case "$XDAI_IDENTITY_COUNT" in
             echo "$XDAI_IDENTITY_FILENAME found in $BACKUP."
         else
             echo "Copying $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
-            mv $XDAI_IDENTITY /root/backup
+            mv $XDAI_IDENTITY/$XDAI_IDENTITY_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -178,7 +178,7 @@ esac
 # find arangodb
 
 ARANGODB_FILENAME=arangodb
-ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*")
+ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 ARANGODB_COUNT=$(echo "$ARANGODB" | wc -l)
 
 case "$ARANGODB_COUNT" in
@@ -190,7 +190,7 @@ case "$ARANGODB_COUNT" in
             echo "$ARANGODB_FILENAME found in $BACKUP."
         else
             echo "Copying $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
-            mv  $ARANGODB /root/backup
+            mv  $ARANGODB/$ARANGODB_FILENAME /root/backup
         fi
         ;;
    [2-99])
@@ -202,7 +202,7 @@ esac
 # find migrations
 
 MIGRATIONS_FILENAME=migrations
-MIGRATIONS=$(find -L /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*")
+MIGRATIONS=$(find -L /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
 MIGRATIONS_COUNT=$(echo "$MIGRATIONS" | wc -l)
 
 case "$MIGRATIONS_COUNT" in
@@ -214,7 +214,7 @@ case "$MIGRATIONS_COUNT" in
             echo "$MIGRATIONS_FILENAME found in $BACKUP."
         else
             echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
-            mv  $MIGRATIONS /root/backup
+            mv  $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
         fi
         ;;
    [2-99])
