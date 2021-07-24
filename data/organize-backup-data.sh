@@ -26,7 +26,7 @@ case "$OTNODERC_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $OTNODE_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $OTNODE_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$OTNODERC"
         ;;
 esac
@@ -50,7 +50,7 @@ case "$HOUSTON_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $HOUSTON_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $HOUSTON_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$HOUSTON"
         ;;
 esac
@@ -74,7 +74,7 @@ case "$IDENTITY_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $IDENTITY_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $IDENTITY_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$IDENTITY"
         ;;
 esac
@@ -98,7 +98,7 @@ case "$KADEMLIA_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $KADEMLIA_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $KADEMLIA_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$KADEMLIA"
         ;;
 esac
@@ -122,7 +122,7 @@ case "$KADEMLIA_KEY_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $KADEMLIA_KEY_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $KADEMLIA_KEY_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$KADEMLIA_KEY"
         ;;
 esac
@@ -146,7 +146,7 @@ case "$SYSTEMDB_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $SYSTEMDB_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $SYSTEMDB_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$SYSTEMDB"
         ;;
 esac
@@ -170,7 +170,7 @@ case "$XDAI_IDENTITY_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $XDAI_IDENTITY_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $XDAI_IDENTITY_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$XDAI_IDENTITY"
         ;;
 esac
@@ -194,7 +194,7 @@ case "$ARANGODB_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $ARANGODB_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $ARANGODB_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$ARANGODB"
         ;;
 esac
@@ -218,7 +218,7 @@ case "$MIGRATIONS_COUNT" in
         fi
         ;;
    [2-99])
-        echo "More than 1 $MIGRATIONS_FILENAME was found in the following locations. Please delete one and retry:"
+        echo "**More than 1 $MIGRATIONS_FILENAME was found in the following locations. Please delete one and restry:**"
         echo "$MIGRATIONS"
         ;;
 esac
