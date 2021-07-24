@@ -5,7 +5,7 @@ if [ -d "/root/OT-Ansible-Files-and-Playbooks" ]; then
     echo "${N1}UPDATING: OT-Ansible-Files-and-Playbooks"
     (cd /root/OT-Ansible-Files-and-Playbooks && git pull) 2>/dev/null && echo "${N1}"
 else
-    echo "OT-Ansible-Files-and-Playbooks not found, skipping${N1}${N1}"
+    echo "${N1}OT-Ansible-Files-and-Playbooks not found, skipping${N1}${N1}"
 fi
 
 if [ -d "/root/OT-Settings" ]; then
