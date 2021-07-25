@@ -8,20 +8,20 @@ while read LINE; do
 
     # Detect comment
     if [[ "$LINE" = *\#\#* ]]; then
-      echo "Comment detected"
-      echo "$LINE" >> testconfig.sh
+      #echo "Comment detected"
+      #echo "$LINE" >> testconfig.sh
     fi
 
     # Detect blank line
     COUNT=${#LINE}
     echo $COUNT
     if [[ "$COUNT" -eq 0 ]]; then
-      echo "$LINE"
-      echo "${N1}" >> testconfig.sh
+      #echo "$LINE"
+      #echo "${N1}" >> testconfig.sh
     fi
 
     # Detect if value present in users config
     LINE_CHECK="${LINE/=\"[0-Z]*/}"
-    echo $LINE_CHECK
+    echo $LINE_CHECK >> testconfig
 
 done < /root/OT-Settings/config-example.sh
