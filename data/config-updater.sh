@@ -1,7 +1,26 @@
 #!/bin/bash
 
-IFS=$'\n' # make newlines the only separator
-for j in $(cat /root/OT-Settings/config-example.sh)
-do
-    echo "$j"
-done
+N1=$'\n'
+
+IFS=''
+while read LINE; do
+#    echo "$LINE"
+
+    # Detect comment
+    if [[ "$LINE" = *\#\#* ]]; then
+      echo "Comment detected"
+      echo "$LINE" >> testconfig.sh
+    fi
+
+    # Detect blank line
+    COUNT=${#LINE}
+    echo $COUNT
+    if [[ "$COUNT" -eq 0 ]]; then
+      echo "$LINE"
+      echo "${N1}" >> testconfig.sh
+    fi
+
+    # Detect if value present in users config
+    IS_P      
+
+done < /root/OT-Settings/config-example.sh
