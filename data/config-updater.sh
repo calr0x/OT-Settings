@@ -21,7 +21,7 @@ while read LINE; do
     fi
 
     # Detect if value present in users config
-    LINE_CHECK="${LINE//=\"[A-Z]*\"/}"
+    LINE_CHECK="${LINE/=\"[0-Z]*/}"
     echo $LINE_CHECK
 
 done < /root/OT-Settings/config-example.sh
