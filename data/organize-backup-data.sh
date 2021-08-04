@@ -12,7 +12,7 @@ fi
 
 OTNODE_FILENAME=.origintrail_noderc
 OTNODERC=$(find -L /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-OTNODERC_COUNT=$(echo "$OTNODERC" | wc -l)
+OTNODERC_COUNT=${#OTNODERC}
 
 case "$OTNODERC_COUNT" in
    0)
@@ -38,7 +38,7 @@ esac
 
 HOUSTON_FILENAME=houston.txt
 HOUSTON=$(find -L /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-HOUSTON_COUNT=$(echo "$HOUSTON" | wc -l)
+HOUSTON_COUNT=${#HOUSTON}
 
 case "$HOUSTON_COUNT" in
    0)
@@ -64,7 +64,7 @@ esac
 
 IDENTITY_FILENAME=identity.json
 IDENTITY=$(find -L /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-IDENTITY_COUNT=$(echo "$IDENTITY" | wc -l)
+IDENTITY_COUNT=${#IDENTITY}
 
 case "$IDENTITY_COUNT" in
    0)
@@ -90,7 +90,7 @@ esac
 
 KADEMLIA_FILENAME=kademlia.crt
 KADEMLIA=$(find -L /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-KADEMLIA_COUNT=$(echo "$KADEMLIA" | wc -l)
+KADEMLIA_COUNT=${#KADEMLIA}
 
 case "$KADEMLIA_COUNT" in
    0)
@@ -116,7 +116,7 @@ esac
 
 KADEMLIA_KEY_FILENAME=kademlia.key
 KADEMLIA_KEY=$(find -L /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-KADEMLIA_KEY_COUNT=$(echo "$KADEMLIA_KEY" | wc -l)
+KADEMLIA_KEY_COUNT=${#KADEMLIA_KEY}
 
 case "$KADEMLIA_KEY_COUNT" in
    0)
@@ -142,7 +142,7 @@ esac
 
 SYSTEMDB_FILENAME=system.db
 SYSTEMDB=$(find -L /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-SYSTEMDB_COUNT=$(echo "$SYSTEMDB" | wc -l)
+SYSTEMDB_COUNT=${#SYSTEMDB}
 
 case "$SYSTEMDB_COUNT" in
    0)
@@ -168,7 +168,7 @@ esac
 
 XDAI_IDENTITY_FILENAME=xdai_erc725_identity.json
 XDAI_IDENTITY=$(find -L /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-XDAI_IDENTITY_COUNT=$(echo "$XDAI_IDENTITY" | wc -l)
+XDAI_IDENTITY_COUNT=${#XDAI_IDENTITY}
 
 case "$XDAI_IDENTITY_COUNT" in
    0)
@@ -194,7 +194,7 @@ esac
 
 ARANGODB_FILENAME=arangodb
 ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-ARANGODB_COUNT=$(echo "$ARANGODB" | wc -l)
+ARANGODB_COUNT=${#ARANGODB}
 
 case "$ARANGODB_COUNT" in
    0)
@@ -220,7 +220,7 @@ esac
 
 MIGRATIONS_FILENAME=migrations
 MIGRATIONS=$(find -L /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-MIGRATIONS_COUNT=$(echo "$MIGRATIONS" | wc -l)
+MIGRATIONS_COUNT=${#MIGRATIONS}
 
 case "$MIGRATIONS_COUNT" in
    0)
