@@ -20,6 +20,7 @@ case "$OTNODERC_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
+        if [[ $OTNODERC == ""; then]]
         if [[ $OTNODERC == $BACKUP ]]; then
             echo "$OTNODE_FILENAME found in $BACKUP."
         else
