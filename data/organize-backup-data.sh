@@ -4,8 +4,8 @@ N1=$'\n'
 BACKUP=/root/backup
 ERROR_CODE=0
 
-if [[ ! -d "/root/backup" ]]; then
-    mkdir /root/backup
+if [[ ! -d "$BACKUP" ]]; then
+    mkdir $BACKUP
 fi
 
 # find .origintrail_noderc
@@ -24,7 +24,7 @@ case "$OTNODERC_COUNT" in
             echo "$OTNODE_FILENAME found in $BACKUP."
         else
             echo "Copying $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
-            mv $OTNODERC /root/backup
+            mv $OTNODERC/$OTNODE_FILENAME /root/backup
         fi
         ;;
    [2-99])
