@@ -27,7 +27,7 @@ case "$OTNODERC_COUNT" in
           if [[ $OTNODERC == $BACKUP ]]; then
             echo "$OTNODE_FILENAME found in $BACKUP."
           else
-            echo "Copying $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
+            echo "Moving $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
             mv $OTNODERC/$OTNODE_FILENAME /root/backup
           fi
         fi
@@ -38,3 +38,260 @@ case "$OTNODERC_COUNT" in
         let ERROR_CODE=1
         ;;
 esac
+
+# find houston.txt
+
+HOUSTON_FILENAME=houston.txt
+HOUSTON=$(find -L /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+HOUSTON_COUNT=$(echo -n $HOUSTON | wc -l)
+
+case "$HOUSTON_COUNT" in
+   0)
+        echo "No files named $HOUSTON_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+        if [[ $HOUSTON == "" ]]; then
+          echo "No files named $HOUSTON_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $HOUSTON == $BACKUP ]]; then
+            echo "$HOUSTON_FILENAME found in $BACKUP."
+          else
+            echo "Moving $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
+            mv $HOUSTON/$HOUSTON_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $HOUSTON_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$HOUSTON${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find identity.json
+
+IDENTITY_FILENAME=identity.json
+IDENTITY=$(find -L /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+IDENTITY_COUNT=$(echo -n $IDENTITY | wc -l)
+
+case "$IDENTITY_COUNT" in
+   0)
+        echo "No files named $IDENTITY_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $IDENTITY == "" ]]; then
+          echo "No files named $IDENTITY_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $IDENTITY == $BACKUP ]]; then
+            echo "$IDENTITY_FILENAME found in $BACKUP."
+          else
+            echo "Moving $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
+            mv $IDENTITY/$IDENTITY_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $IDENTITY_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$IDENTITY${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find KADEMLIA.crt
+
+KADEMLIA_FILENAME=kademlia.crt
+KADEMLIA=$(find -L /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+KADEMLIA_COUNT=$(echo -n $KADEMLIA | wc -l)
+
+case "$KADEMLIA_COUNT" in
+   0)
+        echo "No files named $KADEMLIA_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $KADEMLIA == "" ]]; then
+          echo "No files named $KADEMLIA_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $KADEMLIA == $BACKUP ]]; then
+            echo "$KADEMLIA_FILENAME found in $BACKUP."
+          else
+            echo "Moving $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
+            mv $KADEMLIA/$KADEMLIA_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $KADEMLIA_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$KADEMLIA${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find kademlia.key
+
+KADEMLIA_KEY_FILENAME=kademlia.key
+KADEMLIA_KEY=$(find -L /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+KADEMLIA_KEY_COUNT=$(echo -n $KADEMLIA_KEY | wc -l)
+
+case "$KADEMLIA_KEY_COUNT" in
+   0)
+        echo "No files named $KADEMLIA_KEY_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $KADEMLIA_KEY == "" ]]; then
+          echo "No files named $KADEMLIA_KEY_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $KADEMLIA_KEY == $BACKUP ]]; then
+            echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
+          else
+            echo "Moving $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
+            mv $KADEMLIA_KEY/$KADEMLIA_KEY_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $KADEMLIA_KEY_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$KADEMLIA_KEY${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find system.db
+
+SYSTEMDB_FILENAME=system.db
+SYSTEMDB=$(find -L /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+SYSTEMDB_COUNT=$(echo -n $SYSTEMDB | wc -l)
+
+case "$SYSTEMDB_COUNT" in
+   0)
+        echo "No files named $SYSTEMDB_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $SYSTEMDB == "" ]]; then
+          echo "No files named $SYSTEMDB_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $SYSTEMDB == $BACKUP ]]; then
+            echo "$SYSTEMDB_FILENAME found in $BACKUP."
+          else
+            echo "Moving $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
+            mv $SYSTEMDB/$SYSTEMDB_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $SYSTEMDB_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$SYSTEMDB${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find xdai_erc725_identity.json
+
+XDAI_IDENTITY_FILENAME=xdai_erc725_identity.json
+XDAI_IDENTITY=$(find -L /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+XDAI_IDENTITY_COUNT=$(echo -n $XDAI_IDENTITY | wc -l)
+
+case "$XDAI_IDENTITY_COUNT" in
+   0)
+        echo "No files named $XDAI_IDENTITY_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $XDAI_IDENTITY == "" ]]; then
+          echo "No files named $XDAI_IDENTITY_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $OTNODERC == $BACKUP ]]; then
+            echo "$OTNODE_FILENAME found in $BACKUP."
+          else
+            echo "Moving $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
+            mv $XDAI_IDENTITY/$XDAI_IDENTITY_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $XDAI_IDENTITY_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$XDAI_IDENTITY${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find arangodb
+
+ARANGODB_FILENAME=arangodb
+ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+ARANGODB_COUNT=$(echo -n $ARANGODB | wc -l)
+
+case "$ARANGODB_COUNT" in
+   0)
+        echo "No files named $ARANGODB_FILENAME were found on this server."
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $ARANGODB == "" ]]; then
+          echo "No files named $ARANGODB_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $ARANGODB == $BACKUP ]]; then
+            echo "$ARANGODB_FILENAME found in $BACKUP."
+          else
+            echo "Moving $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
+            mv $ARANGODB/$ARANGODB_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $ARANGODB_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$ARANGODB${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+# find migrations
+
+MIGRATIONS_FILENAME=migrations
+MIGRATIONS=$(find -L /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
+MIGRATIONS_COUNT=$(echo -n $MIGRATIONS | wc -l)
+
+case "$MIGRATIONS_COUNT" in
+   0)
+        echo "No files named $MIGRATIONS_FILENAME were found on this server.${N1}"
+        let ERROR_CODE=1
+        ;;
+   1)
+        if [[ $MIGRATIONS == "" ]]; then
+          echo "No files named $MIGRATIONS_FILENAME were found on this server."
+          let ERROR_CODE=1
+        else
+          if [[ $MIGRATIONS == $BACKUP ]]; then
+            echo "$MIGRATIONS_FILENAME found in $BACKUP."
+          else
+            echo "Moving $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
+            mv $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
+          fi
+        fi
+        ;;
+   [2-99])
+        echo "**More than 1 $MIGRATIONS_FILENAME was found in the following locations. Please delete one and retry:**"
+        echo "$MIGRATIONS${N1}"
+        let ERROR_CODE=1
+        ;;
+esac
+
+if [[ $ERROR_CODE -eq 1 ]]; then
+     echo "There are either missing files or duplicates. Missing files can be placed ANYWHERE in /root to be detected. Please \
+delete the older duplicate files (use the locations printed above to find) and rerun this script. Keep the most recent \
+file and delete the others."
+     exit 1
+else
+     echo "Backup files successfully found!"
+     exit 0
+fi
