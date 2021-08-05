@@ -225,7 +225,7 @@ case "$XDAI_IDENTITY_COUNT" in
         ;;
 esac
 
-# find arangodb
+## find arangodb
 
 ARANGODB_FILENAME=arangodb
 ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
