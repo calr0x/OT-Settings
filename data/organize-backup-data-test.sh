@@ -12,7 +12,7 @@ fi
 
 OTNODE_FILENAME=.origintrail_noderc
 OTNODERC=$(find -L /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-OTNODERC_COUNT=$(echo -n $OTNODERC | wc -l)
+OTNODERC_COUNT=$(echo $OTNODERC | wc -l)
 
 case "$OTNODERC_COUNT" in
    0)
