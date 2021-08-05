@@ -20,7 +20,7 @@ case "$OTNODERC_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $OTNODERC == ""; then]]
+        if [[ $OTNODERC == "" ]]; then
           echo "No files named $OTNODE_FILENAME were found on this server."
           let ERROR_CODE=1
         else
