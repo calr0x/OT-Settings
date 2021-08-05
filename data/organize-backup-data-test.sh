@@ -50,6 +50,7 @@ case "$HOUSTON_COUNT" in
         echo "No files named $HOUSTON_FILENAME were found on this server."
         let ERROR_CODE=1
         ;;
+   1)
         if [[ $HOUSTON == "" ]]; then
           echo "No files named $HOUSTON_FILENAME were found on this server."
           let ERROR_CODE=1
