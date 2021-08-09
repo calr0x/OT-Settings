@@ -5,12 +5,13 @@
 ## OT-DOCKSUCKER                                   #
 ####################################################
 
-## RESTIC_REPOSITORY = S3 or B2 bucket url
+## RESTIC_REPOSITORY = S3 or B2 bucket url or sftp address
 ## S3 example: s3:https://s3.amazonaws.com/bucketname
 ## B2 example: b2:bucketname:path/to/repo
+## Sftp example: sftp:root@1.1.1.1:/path/to/backup/directory
 
-export RESTIC_REPOSITORY="REPLACE_WITH_S3_OR_B2_BUCKET_URL"
-export RESTIC_PASSWORD="REPLACE_WITH_RESTIC_REPOSITORY_PASSWORD"
+export RESTIC_REPOSITORY="REPLACE_WITH_S3_OR_B2_BUCKET_URL_OR_SFTP"
+export RESTIC_PASSWORD="REPLACE_WITH_RESTIC_REPOSITORY_PASSWORD_OF_YOUR_CHOICE"
 
 ## Edit EITHER the AWS or B2 credentials with your keys
 ## Do not enter values for both S3/B2 entries. You can only do one of them
@@ -46,6 +47,7 @@ export LOCAL_BACKUP_SERVER="ADD_SERVER_IP_OR_DOMAIN_HERE"
 ## CRON should run this script which checks the logs for the past 1 hour.
 
 BID_CHECK_INTERVAL="1 hour ago"
+BID_CHECK_INTERVAL_DOCKER="1h"
 BID_CHECK_JOB_NOTIFY_ENABLED="true"
 
 ## SPACE_THRESHOLD:                  Set this to what percentage it should alert above (default 90%).
