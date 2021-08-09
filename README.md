@@ -27,6 +27,16 @@ Every change made will be done on config.sh, and every other OT repository will 
 
 Follow the commented out instructions in the config.sh file and fill up the variables. If you need help, consult the guide below.
 
+## __REPOSITORY UPDATES:__
+
+Below is a command that updates all projects currently installed in your system. Run this to get the latest updates for all repositories. 
+```
+cd OT-Settings
+```
+```
+./update-all-projects.sh
+```
+
 ## __VARIABLES:__
 This section will cover how to get each variable to put inside config.sh
 
