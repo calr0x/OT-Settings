@@ -12,7 +12,7 @@ fi
 
 OTNODE_FILENAME=.origintrail_noderc
 OTNODERC=$(find -L /root -name $OTNODE_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-OTNODERC_COUNT=$(echo -n $OTNODERC | wc -l)
+OTNODERC_COUNT=$(echo $OTNODERC | wc -l)
 
 case "$OTNODERC_COUNT" in
    0)
@@ -20,12 +20,16 @@ case "$OTNODERC_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $OTNODERC == ""; then]]
-        if [[ $OTNODERC == $BACKUP ]]; then
-            echo "$OTNODE_FILENAME found in $BACKUP."
+        if [[ $OTNODERC == "" ]]; then
+          echo "No files named $OTNODE_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
+          if [[ $OTNODERC == $BACKUP ]]; then
+            echo "$OTNODE_FILENAME found in $BACKUP."
+          else
+            echo "Moving $OTNODE_FILENAME found in $OTNODERC to $BACKUP"
             mv $OTNODERC/$OTNODE_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -39,7 +43,7 @@ esac
 
 HOUSTON_FILENAME=houston.txt
 HOUSTON=$(find -L /root -name $HOUSTON_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-HOUSTON_COUNT=$(echo -n $HOUSTON | wc -l)
+HOUSTON_COUNT=$(echo $HOUSTON | wc -l)
 
 case "$HOUSTON_COUNT" in
    0)
@@ -47,11 +51,16 @@ case "$HOUSTON_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $HOUSTON == $BACKUP ]]; then
-            echo "$HOUSTON_FILENAME found in $BACKUP."
+        if [[ $HOUSTON == "" ]]; then
+          echo "No files named $HOUSTON_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
+          if [[ $HOUSTON == $BACKUP ]]; then
+            echo "$HOUSTON_FILENAME found in $BACKUP."
+          else
+            echo "Moving $HOUSTON_FILENAME found in $HOUSTON to $BACKUP"
             mv $HOUSTON/$HOUSTON_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -65,7 +74,7 @@ esac
 
 IDENTITY_FILENAME=identity.json
 IDENTITY=$(find -L /root -name $IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-IDENTITY_COUNT=$(echo -n $IDENTITY | wc -l)
+IDENTITY_COUNT=$(echo $IDENTITY | wc -l)
 
 case "$IDENTITY_COUNT" in
    0)
@@ -73,11 +82,16 @@ case "$IDENTITY_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $IDENTITY == $BACKUP ]]; then
-            echo "$IDENTITY_FILENAME found in $BACKUP."
+        if [[ $IDENTITY == "" ]]; then
+          echo "No files named $IDENTITY_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
+          if [[ $IDENTITY == $BACKUP ]]; then
+            echo "$IDENTITY_FILENAME found in $BACKUP."
+          else
+            echo "Moving $IDENTITY_FILENAME found in $IDENTITY to $BACKUP"
             mv $IDENTITY/$IDENTITY_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -91,7 +105,7 @@ esac
 
 KADEMLIA_FILENAME=kademlia.crt
 KADEMLIA=$(find -L /root -name $KADEMLIA_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-KADEMLIA_COUNT=$(echo -n $KADEMLIA | wc -l)
+KADEMLIA_COUNT=$(echo $KADEMLIA | wc -l)
 
 case "$KADEMLIA_COUNT" in
    0)
@@ -99,11 +113,16 @@ case "$KADEMLIA_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $KADEMLIA == $BACKUP ]]; then
-            echo "$KADEMLIA_FILENAME found in $BACKUP."
+        if [[ $KADEMLIA == "" ]]; then
+          echo "No files named $KADEMLIA_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
+          if [[ $KADEMLIA == $BACKUP ]]; then
+            echo "$KADEMLIA_FILENAME found in $BACKUP."
+          else
+            echo "Moving $KADEMLIA_FILENAME found in $KADEMLIA to $BACKUP"
             mv $KADEMLIA/$KADEMLIA_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -117,7 +136,7 @@ esac
 
 KADEMLIA_KEY_FILENAME=kademlia.key
 KADEMLIA_KEY=$(find -L /root -name $KADEMLIA_KEY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-KADEMLIA_KEY_COUNT=$(echo -n $KADEMLIA_KEY | wc -l)
+KADEMLIA_KEY_COUNT=$(echo $KADEMLIA_KEY | wc -l)
 
 case "$KADEMLIA_KEY_COUNT" in
    0)
@@ -125,11 +144,16 @@ case "$KADEMLIA_KEY_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $KADEMLIA_KEY == $BACKUP ]]; then
-            echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
+        if [[ $KADEMLIA_KEY == "" ]]; then
+          echo "No files named $KADEMLIA_KEY_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
+          if [[ $KADEMLIA_KEY == $BACKUP ]]; then
+            echo "$KADEMLIA_KEY_FILENAME found in $BACKUP."
+          else
+            echo "Moving $KADEMLIA_KEY_FILENAME found in $KADEMLIA_KEY to $BACKUP"
             mv $KADEMLIA_KEY/$KADEMLIA_KEY_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -143,7 +167,7 @@ esac
 
 SYSTEMDB_FILENAME=system.db
 SYSTEMDB=$(find -L /root -name $SYSTEMDB_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-SYSTEMDB_COUNT=$(echo -n $SYSTEMDB | wc -l)
+SYSTEMDB_COUNT=$(echo $SYSTEMDB | wc -l)
 
 case "$SYSTEMDB_COUNT" in
    0)
@@ -151,11 +175,16 @@ case "$SYSTEMDB_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $SYSTEMDB == $BACKUP ]]; then
-            echo "$SYSTEMDB_FILENAME found in $BACKUP."
+        if [[ $SYSTEMDB == "" ]]; then
+          echo "No files named $SYSTEMDB_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
+          if [[ $SYSTEMDB == $BACKUP ]]; then
+            echo "$SYSTEMDB_FILENAME found in $BACKUP."
+          else
+            echo "Moving $SYSTEMDB_FILENAME found in $SYSTEMDB to $BACKUP"
             mv $SYSTEMDB/$SYSTEMDB_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -169,7 +198,7 @@ esac
 
 XDAI_IDENTITY_FILENAME=xdai_erc725_identity.json
 XDAI_IDENTITY=$(find -L /root -name $XDAI_IDENTITY_FILENAME -type f ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-XDAI_IDENTITY_COUNT=$(echo -n $XDAI_IDENTITY | wc -l)
+XDAI_IDENTITY_COUNT=$(echo $XDAI_IDENTITY | wc -l)
 
 case "$XDAI_IDENTITY_COUNT" in
    0)
@@ -177,11 +206,16 @@ case "$XDAI_IDENTITY_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $XDAI_IDENTITY == $BACKUP ]]; then
-            echo "$XDAI_IDENTITY_FILENAME found in $BACKUP."
+        if [[ $XDAI_IDENTITY == "" ]]; then
+          echo "No files named $XDAI_IDENTITY_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
+          if [[ $OTNODERC == $BACKUP ]]; then
+            echo "$OTNODE_FILENAME found in $BACKUP."
+          else
+            echo "Moving $XDAI_IDENTITY_FILENAME found in $XDAI_IDENTITY to $BACKUP"
             mv $XDAI_IDENTITY/$XDAI_IDENTITY_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -191,11 +225,11 @@ case "$XDAI_IDENTITY_COUNT" in
         ;;
 esac
 
-# find arangodb
+## find arangodb
 
 ARANGODB_FILENAME=arangodb
 ARANGODB=$(find -L /root -name $ARANGODB_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-ARANGODB_COUNT=$(echo -n $ARANGODB | wc -l)
+ARANGODB_COUNT=$(echo $ARANGODB | wc -l)
 
 case "$ARANGODB_COUNT" in
    0)
@@ -203,11 +237,16 @@ case "$ARANGODB_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $ARANGODB == $BACKUP ]]; then
-            echo "$ARANGODB_FILENAME found in $BACKUP."
+        if [[ $ARANGODB == "" ]]; then
+          echo "No files named $ARANGODB_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
-            mv  $ARANGODB/$ARANGODB_FILENAME /root/backup
+          if [[ $ARANGODB == $BACKUP ]]; then
+            echo "$ARANGODB_FILENAME found in $BACKUP."
+          else
+            echo "Moving $ARANGODB_FILENAME found in $ARANGODB to $BACKUP"
+            mv $ARANGODB/$ARANGODB_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
@@ -221,7 +260,7 @@ esac
 
 MIGRATIONS_FILENAME=migrations
 MIGRATIONS=$(find -L /root -name $MIGRATIONS_FILENAME -type d  ! -path "/root/.origintrail_noderc/*" -printf '%h\n')
-MIGRATIONS_COUNT=$(echo -n $MIGRATIONS | wc -l)
+MIGRATIONS_COUNT=$(echo $MIGRATIONS | wc -l)
 
 case "$MIGRATIONS_COUNT" in
    0)
@@ -229,11 +268,16 @@ case "$MIGRATIONS_COUNT" in
         let ERROR_CODE=1
         ;;
    1)
-        if [[ $MIGRATIONS == $BACKUP ]]; then
-            echo "$MIGRATIONS_FILENAME found in $BACKUP.${N1}"
+        if [[ $MIGRATIONS == "" ]]; then
+          echo "No files named $MIGRATIONS_FILENAME were found on this server."
+          let ERROR_CODE=1
         else
-            echo "Copying $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP${N1}"
-            mv  $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
+          if [[ $MIGRATIONS == $BACKUP ]]; then
+            echo "$MIGRATIONS_FILENAME found in $BACKUP."
+          else
+            echo "Moving $MIGRATIONS_FILENAME found in $MIGRATIONS to $BACKUP"
+            mv $MIGRATIONS/$MIGRATIONS_FILENAME /root/backup
+          fi
         fi
         ;;
    [2-99])
