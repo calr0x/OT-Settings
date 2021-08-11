@@ -29,15 +29,14 @@ find /var/log -type f -regex ".*\.gz$"
 find /var/log -type f -regex ".*\.[0-9]$"
 
 echo "Running apt clean"
-apt clean
+apt clean -y
 echo "Running apt autoremove"
-apt autoremove
+apt autoremove -y
 
 #Docker:
 #Delete previous node versions (check what version they have 1st)
 
 AFTER_SPACE=$(df -h | grep "sda1\s" | tr -s " " " " | cut -d" " -f3 | tr -d 'G')
-DIFF=eval($BEFORE_SPACE - $AFTER_SPACE)
 
 echo "Disk space after cleaning is $AFTER_SPACE Gb."
 echo "Total space cleaned is $(($BEFORE_SPACE-$AFTER_SPACE)) Gb."
