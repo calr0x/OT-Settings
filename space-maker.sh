@@ -43,4 +43,4 @@ OUTPUT=$(apt autoremove -y 2>&1)
 AFTER_SPACE=$(df -h | grep "sda1\s" | tr -s " " " " | cut -d" " -f3 | tr -d 'G')
 
 echo "${N1}Disk space after cleaning is $AFTER_SPACE Gb."
-echo "${N1}Total space cleaned is $(($BEFORE_SPACE-$AFTER_SPACE)) Gb."
+echo "${N1}Total space cleaned is $((BEFORE_SPACE-AFTER_SPACE)) Gb."
