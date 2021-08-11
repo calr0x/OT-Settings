@@ -6,7 +6,7 @@ BEFORE_SPACE=$(df -h | grep "sda1\s" | tr -s " " " " | cut -d" " -f3 | tr -d 'G'
 echo "${N1}Current used disk space is: $BEFORE_SPACE Gb."
 
 echo "${N1}Removing journal entries older than an hour"
-OUTPUT=$(journalctl --vacuum-time=1h)
+OUTPUT=$(journalctl --vacuum-time=1h 2>&1)
 
 echo "${N1}Setting the journal limit in the future to 50Mb"
 OUTPUT=$(sed -i 's|#SystemMaxUse=|SystemMaxUse=50M|' /etc/systemd/journald.conf)
