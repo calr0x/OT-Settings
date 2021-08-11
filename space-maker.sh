@@ -12,8 +12,8 @@ echo "${N1}Setting the journal limit in the future to 50Mb"
 OUTPUT=$(sed -i 's|#SystemMaxUse=|SystemMaxUse=50M|' /etc/systemd/journald.conf)
 
 if [[ -d "/root/backup" ]] || [[ -L /root/backup ]]; then
-  echo "${N1}Deleting /root/backup"
-  OUTPUT=$(rm -rf /root/backup)
+  echo "${N1}Deleting /root/backup contents"
+  OUTPUT=$(rm -rf /root/backup/*)
 fi
 
 if [[ ! -d "/ot-node" ]]; then
