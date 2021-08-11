@@ -14,8 +14,10 @@ OUTPUT=$(sed -i 's|#SystemMaxUse=|SystemMaxUse=50M|' /etc/systemd/journald.conf)
 if [[ ! -d "/ot-node" ]]; then
   echo "${N1}Deleting docker backup folder contents"
   OUTPUT=$(docker exec it otnode sh -c rm -rf ../backup/*)
+  
   echo "${N1}Deleting docker logs"
   OUTPUT=$(truncate -s 0 $(docker inspect -f '{{.LogPath}}' otnode))
+  
   echo "${N1}Settings docker log file max size to 50Mb"
   OUTPUT=$(docker create -i --log-driver json-file --log-opt max-size=50m)
 else
