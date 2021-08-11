@@ -30,9 +30,9 @@ OUTPUT=$(find /var/log -type f -regex ".*\.gz$")
 OUTPUT=$(find /var/log -type f -regex ".*\.[0-9]$")
 
 echo "${N1}Running apt clean"
-OUTPUT=$(apt clean -y)
+OUTPUT=$(apt clean -y 2>&1)
 echo "${N1}Running apt autoremove"
-OUTPUT=$(apt autoremove -y)
+OUTPUT=$(apt autoremove -y 2>&1)
 
 #Docker:
 #Delete previous node versions (check what version they have 1st)
