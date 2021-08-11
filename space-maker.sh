@@ -16,7 +16,7 @@ if [[ -d "/root/backup" ]] || [[ -L /root/backup ]]; then
   OUTPUT=$(rm -rf /root/backup/*)
 fi
 
-if [[ -d "/ot-node/backup"]]; then
+if [[ -d "/ot-node/backup" ]]; then
   echo "${N1}Deleting node backup folder"
   rm -rf /ot-node/backup/*
 fi
