@@ -17,20 +17,15 @@ if [[ ! -d "/ot-node" ]]; then
   
   echo "${N1}Deleting docker logs"
   OUTPUT=$(truncate -s 0 $(docker inspect -f '{{.LogPath}}' otnode))
-<<<<<<< HEAD
+  
   #echo "${N1}Settings docker log file max size to 50Mb"
   #OUTPUT=$(docker create -i --log-driver json-file --log-opt max-size=50m)
-=======
-  
-  echo "${N1}Settings docker log file max size to 50Mb"
-  OUTPUT=$(docker create -i --log-driver json-file --log-opt max-size=50m)
 else
   echo "${N1}Deleting node backup folder contents"
   rm -rf /ot-node/backup/*
   
   echo "${N1}Deleting /root/backup contents"
   OUTPUT=$(rm -rf /root/backup/*)
->>>>>>> 7f94ea01177c0503fc1fa07c56c8ef938079c6f4
 fi
 
 echo "${N1}Deleting archived logs"
