@@ -13,7 +13,7 @@ OUTPUT=$(sed -i 's|#SystemMaxUse=|SystemMaxUse=50M|' /etc/systemd/journald.conf)
 
 if [[ ! -d "/ot-node" ]]; then
   echo "${N1}Deleting docker backup folder contents"
-  OUTPUT=$(docker exec it otnode sh -c rm -rf ../backup/*)
+  OUTPUT=$(docker exec otnode sh -c rm -rf ../backup/*)
   
   echo "${N1}Deleting docker logs"
   OUTPUT=$(truncate -s 0 $(docker inspect -f '{{.LogPath}}' otnode))
