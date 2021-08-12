@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 N1=$'\n'
 BEFORE_SPACE=$(df -h | grep "sda1\s" | tr -s " " " " | cut -d" " -f3 | tr -d 'G')
 
