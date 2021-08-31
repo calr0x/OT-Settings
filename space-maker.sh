@@ -5,6 +5,9 @@ BEFORE_SPACE=$(df -h | grep "sda1\s" | tr -s " " " " | cut -d" " -f3 | tr -d 'G'
 
 echo "${N1}Current used disk space is: $BEFORE_SPACE Gb."
 
+echo "Deleting ~/.cache directory"
+rm -rf /root/.cache
+
 echo "${N1}Removing journal entries older than an hour"
 OUTPUT=$(journalctl --vacuum-time=1h 2>&1)
 
