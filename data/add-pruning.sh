@@ -36,6 +36,16 @@ if [[ -d /ot-node ]];then
         echo $OUTPUT
         exit 1
     fi
+
+    echo -n "Pruning successfully added, restarting node and displaying logs to verify pruning started: "
+    OUTPUT=$(systemctl restart otnode && journalctl -u otnode -f)
+    if [[ $? -eq 0 ]]; then
+        echo -e "${GREEN}SUCCESS${NC}${N1}"
+    else
+        echo -e "${RED}FAILED${NC}${N1}"
+        echo $OUTPUT
+        exit 1
+    fi
 else
     PATH=/root/
 
@@ -62,6 +72,16 @@ else
     jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
     mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
     
+    if [[ $? -eq 0 ]]; then
+        echo -e "${GREEN}SUCCESS${NC}${N1}"
+    else
+        echo -e "${RED}FAILED${NC}${N1}"
+        echo $OUTPUT
+        exit 1
+    fi
+
+    echo -n "Pruning successfully added, restarting node and displaying logs to verify pruning started: "
+    OUTPUT=$(docker restart otnode && docker logs otnode -f)
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
