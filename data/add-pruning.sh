@@ -4,10 +4,10 @@
 NODERC=.origintrail_noderc
 
 if [[ -d /ot-node ]];then
-    PATH=/ot-node/current/
+    NODERC_PATH=/ot-node/current/
     
     echo -n "DockSucker install detected, backing up existing config to /root/origintrail_nodrc-BACKUP: "
-    OUTPUT=$(cp $PATH$NODERC /root/origintrail_nodrc-BACKUP)
+    OUTPUT=$(cp $NODERC_PATH$NODERC /root/origintrail_nodrc-BACKUP)
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
@@ -18,16 +18,16 @@ if [[ -d /ot-node ]];then
 
     echo -n "Adding pruning to the noderc: "
     
-    jq '.dataset_pruning.enabled=true' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
+    jq '.dataset_pruning.enabled=true' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
     
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
@@ -50,7 +50,7 @@ else
     PATH=/root/
 
     echo -n "Docker install detected, backing up existing config to /root/origintrail_nodrc-BACKUP: "
-    OUTPUT=$(cp $PATH$NODERC /root/origintrail_nodrc-BACKUP)
+    OUTPUT=$(cp $NODERC_PATH$NODERC /root/origintrail_nodrc-BACKUP)
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
@@ -61,16 +61,16 @@ else
 
     echo -n "Adding pruning to the noderc: "
     
-    jq '.dataset_pruning.enabled=true' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
+    jq '.dataset_pruning.enabled=true' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $NODERC_PATH.origintrail_noderc >> $NODERC_PATHorigintrail_noderc_temp
+    mv $NODERC_PATHorigintrail_noderc_temp $NODERC_PATH.origintrail_noderc
     
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
