@@ -65,16 +65,16 @@ else
 
     echo -n "Adding pruning to the noderc: "
     
-    jq '.dataset_pruning.enabled=true' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $PATH.origintrail_noderc >> $PATHorigintrail_noderc_temp
-    mv $PATHorigintrail_noderc_temp $PATH.origintrail_noderc
+    jq '.dataset_pruning.enabled=true' $OTPATH.origintrail_noderc >> $OTPATHorigintrail_noderc_temp
+    mv $OTPATHorigintrail_noderc_temp $OTPATH.origintrail_noderc
+    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' $OTPATH.origintrail_noderc >> $OTPATHorigintrail_noderc_temp
+    mv $OTPATHorigintrail_noderc_temp $OTPATH.origintrail_noderc
+    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' $OTPATH.origintrail_noderc >> $OTPATHorigintrail_noderc_temp
+    mv $OTPATHorigintrail_noderc_temp $OTPATH.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' $OTPATH.origintrail_noderc >> $OTPATHorigintrail_noderc_temp
+    mv $OTPATHorigintrail_noderc_temp $OTPATH.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' $OTPATH.origintrail_noderc >> $OTPATHorigintrail_noderc_temp
+    mv $OTPATHorigintrail_noderc_temp $OTPATH.origintrail_noderc
     
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
