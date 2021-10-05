@@ -3,6 +3,10 @@
 
 NODERC=.origintrail_noderc
 
+if [[ -f /root/add-pruning.sh ]]; then
+    rm /root/add-pruning.sh
+fi
+
 if [[ -d /ot-node ]];then
     OTPATH=/ot-node/current/
     
