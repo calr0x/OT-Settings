@@ -42,7 +42,7 @@ if [[ -d /ot-node ]];then
     fi
 
     echo -n "Pruning successfully added, restarting node and displaying logs to verify pruning started: "
-    OUTPUT=$(systemctl restart otnode && journalctl -u otnode -f)
+    OUTPUT=$(systemctl restart otnode && journalctl -u otnode -f) > /dev/null 2>&1
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
@@ -85,7 +85,7 @@ else
     fi
 
     echo -n "Pruning successfully added, restarting node and displaying logs to verify pruning started: "
-    OUTPUT=$(docker restart otnode && docker logs otnode -f)
+    OUTPUT=$(docker restart otnode && docker logs otnode -f) > /dev/null 2>&1
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
