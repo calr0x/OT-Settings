@@ -4,10 +4,10 @@
 NODERC=.origintrail_noderc
 
 if [[ -d /ot-node ]];then
-    PATH=/ot-node/current/
+    OTPATH=/ot-node/current/
     
-    echo -n "DockSucker install detected, backing up existing config to /root/origintrail_nodrc-BACKUP: "
-    OUTPUT=$(cp $PATH$NODERC /root/origintrail_nodrc-BACKUP)
+    echo -n "DockSucker install detected, backing up existing config to /root/origintrail_noderc-BACKUP: "
+    OUTPUT=$(cp $OTPATH$NODERC /root/origintrail_noderc-BACKUP)
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
@@ -47,10 +47,10 @@ if [[ -d /ot-node ]];then
         exit 1
     fi
 else
-    PATH=/root/
+    OTPATH=/root/
 
-    echo -n "Docker install detected, backing up existing config to /root/origintrail_nodrc-BACKUP: "
-    OUTPUT=$(cp $PATH$NODERC /root/origintrail_nodrc-BACKUP)
+    echo -n "Docker install detected, backing up existing config to /root/origintrail_noderc-BACKUP: "
+    OUTPUT=$(cp $OTPATH$NODERC /root/origintrail_noderc-BACKUP)
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
     else
