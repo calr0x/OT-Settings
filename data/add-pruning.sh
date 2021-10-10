@@ -65,16 +65,16 @@ else
 
     echo -n "Adding pruning to the noderc: "
     
-    jq '.dataset_pruning.enabled=true' /ot-node/current/.origintrail_noderc >> /ot-node/current/origintrail_noderc_temp
-    mv /ot-node/current/origintrail_noderc_temp /ot-node/current/.origintrail_noderc
-    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' /ot-node/current/.origintrail_noderc >> /ot-node/current/origintrail_noderc_temp
-    mv /ot-node/current/origintrail_noderc_temp /ot-node/current/.origintrail_noderc
-    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' /ot-node/current/.origintrail_noderc >> /ot-node/current/origintrail_noderc_temp
-    mv /ot-node/current/origintrail_noderc_temp /ot-node/current/.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' /ot-node/current/.origintrail_noderc >> /ot-node/current/origintrail_noderc_temp
-    mv /ot-node/current/origintrail_noderc_temp /ot-node/current/.origintrail_noderc
-    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' /ot-node/current/.origintrail_noderc >> /ot-node/current/origintrail_noderc_temp
-    mv /ot-node/current/origintrail_noderc_temp /ot-node/current/.origintrail_noderc
+    jq '.dataset_pruning.enabled=true' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
+    mv /ot-node/current/origintrail_noderc_temp /root/.origintrail_noderc
+    jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
+    mv /root/origintrail_noderc_temp /root/.origintrail_noderc
+    jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
+    mv /root/origintrail_noderc_temp /root/.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.enabled=true' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
+    mv /root/origintrail_noderc_temp /root/.origintrail_noderc
+    jq '.dataset_pruning.low_estimated_value_datasets.minimum_free_space_percentage=75' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
+    mv /root/origintrail_noderc_temp /root/.origintrail_noderc
     
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}SUCCESS${NC}${N1}"
