@@ -66,7 +66,7 @@ else
     echo -n "Adding pruning to the noderc: "
     
     jq '.dataset_pruning.enabled=true' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
-    mv /ot-node/current/origintrail_noderc_temp /root/.origintrail_noderc
+    mv /root/origintrail_noderc_temp /root/.origintrail_noderc
     jq '.dataset_pruning.imported_pruning_delay_in_minutes=1440' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
     mv /root/origintrail_noderc_temp /root/.origintrail_noderc
     jq '.dataset_pruning.replicated_pruning_delay_in_minutes=1440' /root/.origintrail_noderc >> /root/origintrail_noderc_temp
